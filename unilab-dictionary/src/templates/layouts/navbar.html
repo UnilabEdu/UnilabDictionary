@@ -1,0 +1,14 @@
+{% from "macros.html" import create_navlink %}
+
+<nav class="nav">
+    <ul class="nav-ul">
+         <li class="nav-li">
+            <a class="nav-link active" href="{{url_for('main.index')}}"><img src="./media/svg/site-logo/logo.svg" alt="site logo"></a>
+        <li class="nav-li">
+            <a class="nav-link" href="{{url_for('about.about')}}">{{"პროექტის შესახებ"}}</a>
+        </li>
+        <li class="nav-li">
+            <a class="nav-link" href="{{url_for('dictionary.dictionary')}}">{{"ლექსიკონი"}}</a>
+        </li>
+    </ul>
+</nav>

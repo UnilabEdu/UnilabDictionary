@@ -1,0 +1,12 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+
+    <main class="error-wrapper">
+        <div class="background-svg">    
+        </div>
+        <h1>გვერდი ვერ მოიძებნა</h1>
+        <a href="{{url_for('index')}}"><button>მთავარი გვერდი</button></a>
+    </main>
+    <script type="module" src="static/js/main.js"></script>
+{% endblock %}
