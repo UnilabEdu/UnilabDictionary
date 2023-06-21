@@ -1,0 +1,39 @@
+{% extends "layouts/base.html" %}
+
+{% block body %}
+    <main class="container">
+        <article class="term-of-week">
+            <h2>"კვირის ტერმინი"</h2>
+            <p class="term-title"><strong></strong> - <span></span></p>
+            <p class="week-term-description"></p>
+            <div class="term-of-week-footer">
+                <div class="hashtag-keywords">
+                    <a href="{{url_for('dictionary.dictionary')}}"><span class="hashtag-1"></span></a>
+                    <a href="{{url_for('dictionary.dictionary')}}"><span class="hashtag-2"></span></a>
+                </div>
+                    <a href="{{url_for('dictionarydetailed.dictionary_detailed')}}" class="see-details">ნახე სრულად</a>
+            </div>
+        </article>
+        <div class="main-input-wrapper">
+            <form action="templates/dictionary/dictionary.html" class="input-form">
+                <input class="main-input" type="text" placeholder="ძიება" id="main-search" required>
+            </form>
+            <svg class="search-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                clip-rule="evenodd">
+                <path
+                    d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z" />
+            </svg>
+        </div>
+        <div class="term-cards-wrapper">
+        </div>
+        <div class="about-project">
+            <h3 class="about-title">პროექტის შესახებ</h3>
+            <p class="about-info">Lorem ipsum dolor, sit amet consectetur adipisicing elit. Facere nemo, corporis
+                incidunt recusandae quaerat libero saepe qui. Magnam exercitationem neque tenetur molestias dolores
+                similique rem, culpa cumque omnis ut aperiam ipsa asperiores? Eligendi illum corporis molestias
+                suscipit, aliquam aperiam omnis, ratione hic, nam laboriosam sunt fuga vel reprehenderit voluptas
+                impedit.</p>
+        </div>
+    </main>
+<script type="module" src="static/js/main.js"></script>
+{% endblock %}

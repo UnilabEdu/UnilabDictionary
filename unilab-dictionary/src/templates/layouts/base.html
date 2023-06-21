@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <!-- facebook metas -->
+    <!-- <meta property="og:url" content="" /> -->
+    <!-- <meta property="og:image" content="" /> -->
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content="უნილაბის ლექსიკონი" />
+    <meta property="og:description" content="შექმენი ქართული ტერმინი, შემოუერთდი ტერმინების კონკურსს!" />
+    <!-- facebook metas -->
+    <meta name="description" content="შექმენი ქართული ტერმინი, შემოუერთდი ტერმინების კონკურსს!"/>
+    <title>{% block title %} {% endblock %}</title>
+    <link href="{{ url_for('static', filename='css/style.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/font.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/slick.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/slick-theme.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/responsive.css') }}" rel="stylesheet"/>
+    <link href="{{ url_for('static', filename='css/utilities.css') }}" rel="stylesheet"/>
+    <link href="{{url_for('static', filename='favicon.ico')}}" rel="shortcut icon">
+
+
+</head>
+
+
+<body>
+{% include "layouts/navbar.html" %}
+
+<div class="container">
+    {% block body %}
+    {% endblock %}
+</div>
+    <footer class="footer">
+        <div class="container">
+            <div class="center-element">
+                <div class="email-info">
+                    <span>unilab@iliauni.edu.ge</span>
+                </div>
+                <p class="footer-info">ვებგვერდი შეიქმნა ლექსიკოგრაფების დახმარებით</p>
+
+            </div>
+        </div>
+    </footer>
+</body>
+
+</html>

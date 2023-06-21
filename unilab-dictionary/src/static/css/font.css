@@ -1,0 +1,29 @@
+/* FONTS */
+@font-face {
+    font-family: 'firaGo-regular';
+    src: url(../fonts/fira-go/FiraGO-Regular.ttf);
+}
+@font-face {
+    font-family: 'firaGo-medium';
+    src: url(../fonts/fira-go/FiraGO-Medium.ttf);
+}
+@font-face {
+    font-family: 'firaGo-light';
+    src: url(../fonts/fira-go/FiraGO-Light.ttf);
+}
+@font-face {
+    font-family: 'firaGo-extra-bold';
+    src: url(../fonts/fira-go/FiraGO-ExtraBold.ttf);
+}
+@font-face {
+    font-family: 'firaGo-light-italic';
+    src: url(../fonts/fira-go/FiraGO-LightItalic.ttf);
+}
+@font-face {
+    font-family: 'BPG-regular';
+    src: url(../fonts/bpg/bpg_web_002_caps.ttf);
+}
+@font-face {
+    font-family: 'BPG-ghalo-caps-regular';
+    src: url(../fonts/bpg/bpg-glaho-web-caps-webfont.ttf);
+}
