@@ -1,0 +1,373 @@
+/* responsive */
+@media (max-width:1140px) {
+    .container {
+        max-width: 991px;
+    }
+    .week-term-description {
+        margin-bottom: 10px;
+    }
+}
+@media (max-width: 1080px){
+    .container {
+        max-width: 868px;
+    }
+    .term-cards-wrapper{
+        justify-content: space-around;
+    }
+    .letter-box.geo:not(:last-child) {
+        margin-right: 2px;
+    }
+    .letter-box:not(:last-child) {
+        margin-right: 5px;
+    }
+}
+@media (max-width: 992px) {
+    .container {
+        max-width: 768px;
+    }
+    .alphabet {
+        display: none;
+    }
+    .alphabet-block{
+        justify-content: flex-end;
+    }
+    .alphabet-button-wrapper {
+        margin-bottom: 10px;
+    }
+    .swiper{
+        display: block;
+    }
+    .swiper-button-prev,
+    .swiper-button-next {
+        display: block;
+        height: 100%;
+    }
+    .counter-wrapper {
+        margin-top: 30px;
+    }
+    .select-wrapper {
+        width: 100%;
+        justify-content: flex-start;
+        margin: 0 0 1rem;
+        top: 85px;
+        left: 0;
+    }
+    #filter {
+        /* top: 85px;
+        left: 180px; */
+    }
+    #sort {
+        /* top: 85px;
+        left: 400px; */
+    }
+    .term-detailed .example-flexbox p {
+        max-width: 490px;
+    }
+    .example-flexbox {
+        margin-bottom: 30px;
+    }
+    .term-cards-wrapper{
+        margin-top: 50px;
+    }
+    .card-footer, .card-body {
+        margin-left: 30px;
+    }
+}
+@media (max-width: 860px) {
+    .container {
+        max-width: 700px;
+    }
+    .term-detailed .example-flexbox p {
+        max-width: 390px;
+    }
+    .see-details {
+        padding: 10px 5px;
+    }
+}
+@media (max-width: 769px) {
+    .container{
+        max-width: 608px;
+    }
+    .term-of-week{
+        padding: 20px 10px 10px 20px;
+    }
+    .term-cards-wrapper{
+        margin-top: 100px;
+    }
+    .term-card {
+        width: 296px;
+    }
+    .card-body {
+        width: 250px;
+    }
+    .week-term-description{
+        margin-bottom: 20px;
+        max-height: 63px;
+    }
+    .term-of-week .see-details{
+        padding: 12px 4px 11px 5px;
+        font-size: var(--small);
+        min-width: 104px;
+        min-height: 40px;
+    }
+    .alphabet-wrapper span {
+        padding: 0 2px;
+    }
+    .example-img {
+        width: 160px;
+    }
+    .term-detailed .example-flexbox p {
+        max-width: 290px;
+    }
+    .term-card.fullsize .card-body {
+        width: 100%;
+    }
+    .terms-button-wrapper {
+        margin-left: 40px;
+    }
+    .card-footer {
+        gap: 1rem;
+    }
+
+    .swiper-button-next {
+        right: -1.8rem;
+        color: var(--card-bg);
+    }
+    .swiper-button-prev {
+        left: -1rem;
+        color: var(--card-bg);
+    }
+}
+@media (max-width: 670px) {
+    .container {
+        max-width: 570px;
+    }
+    .nav-link {
+        font-size: var(--small);
+    }
+    .nav-link:last-child {
+        margin-left: 55px;
+    }
+    #dictionary-search{
+        padding-right: 0;
+    }
+    .term-card,
+    .card-body {
+        width: 100%;
+    }
+    .term-detailed .example-flexbox {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+    .term-detailed .example-img-wrapper {
+        margin-bottom: 11px;
+    }
+    .example-img {
+        width: 100%;
+    }
+    #termExample {
+        max-width: 100%;
+    }
+    .see-details {
+        padding: 10px 15px;
+    }
+    .hashtag-wrapper a {
+        display: block;
+        margin-bottom: 4px;
+    }
+    .term-header-title{
+        flex-direction: row;
+    }
+}
+@media (max-width: 620px) {
+    .container {
+        max-width: 500px;
+    }
+    .terms-button-wrapper {
+        flex-wrap: wrap;
+    }
+    .terms-button-wrapper a {
+        margin: 10px;
+    }
+    .card-footer, .card-body {
+        margin-left: 0;
+    }
+    .terms-button-wrapper {
+        margin-left: 0;
+    }
+}
+@media  (max-width: 580px) {
+    .container {
+        max-width: 450px;
+    }
+    .nav-link {
+        font-size: var(--small);
+        line-height: var(--small);
+    }
+    .nav-link:last-child {
+        margin-left: 12px;
+    }
+    .footer {
+        height: auto;
+        padding: 5px 31px 36px 33px;
+    }
+    .footer-info::before{
+        width: 233px;
+        margin: 0 auto 20px auto;
+    }
+    .alphabet-bg{
+        height: 22px;
+        width: 46px;
+        background-color: var(--details);
+        border-radius: var(--large);
+    }
+    .alphabet-switcher {
+        height: 20px;
+        width: 20px;
+    }
+    .switch-face {
+        font-size: 8px;
+    }
+    .error-wrapper h1 {
+        font-size: 20px;
+    }
+}
+@media (max-width: 480px) {
+    .container {
+        max-width: 380px;
+    }
+    .nav-link {
+        font-size: var(--small);
+        line-height: var(--micro);
+    }
+    .nav-link:last-child {
+        margin-left: 0;
+        font-family: 'firaGo-regular';
+        font-size: 12px;
+    }
+    .nav-li:not(:first-child){
+        margin-left: 8px;
+    }
+
+    /* SELECT AND DROPDOWN STYLES */
+    .select-wrapper {
+        gap: 1rem;
+        margin: 1rem 0;
+        flex-direction: column;
+    }
+    #filter {
+        margin-right: 0;
+        padding-left: 0;
+        width: 100%;
+    }
+    #sort {
+        padding-left: 0;
+        width: 100%;
+    }
+    .custom-arrow,
+    .custom-arrow.last {
+        right: 1rem;
+    }
+    .counter-wrapper {
+        margin-top: 60px;
+    }
+    .term-of-week-footer {
+        flex-direction: column;
+    }
+    .term-of-week-footer .hashtag-keywords {
+        align-self: flex-start;
+        margin-bottom: 10px;
+    }
+    .term-of-week-footer .see-details {
+        align-self: flex-end;
+        padding: 9px 16px 6px;
+        margin-top: 1.5rem;
+    }
+    .swiper-container {
+        width: 90%;
+        margin: 0 auto;
+    }
+    .swiper-wrapper{
+        width: 80%;
+        padding-right: 40px;
+    }
+    .example-img {
+        width: 275px;
+    }
+    .term-card.fullsize .term-header-title {
+        flex-direction: column;
+    }
+    .term-header-title{
+        flex-direction: column;
+    }
+    .background-svg {
+        height: 460px;
+        width: 260px;
+        background-size: contain;
+    }
+    .slick-slide {
+        margin: 0 auto 30px;
+    }
+
+    .error-wrapper h1 {
+        font-size: 18px;
+        margin-top: 35px;
+        white-space: nowrap;
+    }
+    .error-wrapper button {
+        font-size: 16px;
+    }
+    .slick-prev {
+        left: 0;
+    }
+    .slick-next {
+        right: 0;
+    }
+}
+@media (max-width: 380px) {
+    .header{
+        margin-top: 0;
+        padding: 33px 0 20px 0;
+    }
+    .container {
+        max-width: 318px;
+    }
+    .site-logo a img {
+        width: 100px;
+    }
+    .nav-link:last-child {
+        white-space: nowrap;
+    }
+    .alphabet-button-wrapper {
+        margin-right: 10px;
+    }
+    .term-of-week h2 {
+        font-size: 18px;
+    }
+    .term-title strong, .term-title span {
+        font-size: 14px;
+    }
+    .week-term-description {
+        font-size: 14px;
+    }
+    .term-of-week{
+        padding: 10px;
+    }
+    .error-wrapper {
+        padding-top: 0;
+    }
+    .error-wrapper h1 {
+        margin-top: 15px;
+        top: 27%;
+        transform: translate(-50%, -27%);
+    }
+    .error-wrapper button {
+        font-size: 16px;
+        white-space: nowrap;
+    }
+    .error-wrapper a {
+        top: 40%;
+        transform: translate(-50%, -40%);
+    }
+}
