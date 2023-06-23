@@ -1,0 +1,90 @@
+{% extends "layouts/base.html" %}
+ {% block body %}
+
+    <main class="container">
+       
+        <div class="alphabet-block">
+            <div class="alphabet">
+                <div class="alphabet-wrapper">
+                </div>
+            </div>
+            <div class="alphabet-button-wrapper">
+                <div class="alphabet-bg">
+                    <div class="alphabet-switcher">
+                        <span class="switch-face"></span>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="swiper-container">
+            <div class="swiper">
+                <!-- Additional required wrapper -->
+                <div class="swiper-wrapper">
+                  <!-- Slides -->
+                </div>
+                <!-- If we need pagination -->
+                <div class="swiper-pagination"></div>
+            
+                <!-- If we need scrollbar -->
+                <div class="swiper-scrollbar"></div>
+              </div>
+              <div class="swiper-button-prev"></div>
+              <div class="swiper-button-next"></div>
+        </div>
+        <article class="search-block">
+            <div class="searchbar">
+                <form action="">
+                    <input id="dictionary-search" type="text" placeholder="ძიება" name="search">
+                    <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
+                        clip-rule="evenodd">
+                        <path
+                            d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z" />
+                    </svg>
+                        <div class="select-wrapper" id="dropdown-wrapper">
+                            <div class="select">
+                                <select name="filter" id="filter">
+                                    <option value="default" selected disabled hidden>ფილტრი</option>
+                                    <option value="ICT">ICT პროექტების მართვა</option>
+                                    <option value="wordpress">WordPress</option>
+                                    <option value="frontend">Front End</option>
+                                    <option value="graphicdesign">გრაფიკული დიზაინი</option>
+                                    <option value="python">Python</option>
+                                    <option value="narrativedesign">ნარატივ დიზაინი</option>
+                                    <option value="digitalcommunications">ციფრული კომუნიკაციები</option>
+                                </select>
+                                <div class="custom-arrow">
+                                    <img class="hihi" src="../uploads/svg/generic/dropdown-arrow.svg" alt="dropdown-arrow">
+                                </div>
+                            </div>
+                            <div class="select">
+                                <select name="sort" id="sort">
+                                    <option value="default" selected disabled hidden>სორტირება</option>
+                                    <option value="ICT">ანბანის ზრდადობის მიხედვით</option>
+                                    <option value="wordpress">ანბაბის კლებადობის მიხედვით</option>
+                                    <option value="frontend">პოპულარობის მიხედვით</option>
+                                    <option value="graphicdesign">ახალი დამატებული</option>
+                                    <option value="python">ძველი დამატებული</option>
+                                </select>
+                                <div class="custom-arrow last">
+                                    <img src="../uploads/svg/generic/dropdown-arrow.svg" alt="dropdown-arrow">
+                                </div>
+                            </div>
+                        </div>
+                </form>
+            </div>
+        </article>
+        <div class="counter-wrapper">
+            <span>ძიების შედეგი : </span><strong><span class="search-result-counter">0</span></strong>
+        </div>
+        <div class="not-found-message-wrapper">
+            <h6 class="not-found-message">ტერმინი ვერ მოიძებნა</h6>
+        </div>
+        <div class="term-cards-wrapper">
+        </div>
+        <div class="pagination"></div>
+    </main>
+    <!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
+    <!-- <script type="module" src="../js/main.js"></script> -->
+    <script type="module" src="static/js/dictionary.js"></script>
+{% endblock %}
+
