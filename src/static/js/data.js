@@ -4,28 +4,28 @@ export const members = [
     memberName: "სახელი",
     memberLastname: "გვარი",
     memberPosition: "Frontend Developer",
-    memberImagePath: "../media/png/person.png",
+    memberImagePath: "../static/png/person.png",
   },
   {
     memberId: 1,
     memberName: "სახელი",
     memberLastname: "გვარი",
     memberPosition: "Backend Developer",
-    memberImagePath: "../media/png/person.png",
+    memberImagePath: "../static/png/person.png",
   },
   {
     memberId: 2,
     memberName: "სახელი",
     memberLastname: "გვარი",
     memberPosition: "UI/UX Designer",
-    memberImagePath: "../media/png/person.png",
+    memberImagePath: "../static/png/person.png",
   },
   {
     memberId: 3,
     memberName: "სახელი",
     memberLastname: "გვარი",
     memberPosition: "Project Manager",
-    memberImagePath: "../media/png/person.png",
+    memberImagePath: "../static/png/person.png",
   },
 ];
 
@@ -37,7 +37,7 @@ export const data = [
     Description:
       "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "frontend",
   },
   {
@@ -46,7 +46,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯერი",
     Description: " PM, ერთ-ერთი მთავარი მონაწილე პროექტში. მისი როლი არის",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -56,7 +56,7 @@ export const data = [
     Description:
       "ICT იშიფრება, როგორც ინფორმაციული და საკომუნიკაციო როგორც ინფორმაციული და საკომუნიკაციო",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "python",
   },
   {
@@ -65,7 +65,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "frontend",
   },
   {
@@ -74,7 +74,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -83,7 +83,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "python",
   },
   {
@@ -92,7 +92,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "frontend",
   },
   {
@@ -101,7 +101,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -110,7 +110,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "python",
   },
   {
@@ -119,7 +119,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "python",
   },
   {
@@ -128,7 +128,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -137,7 +137,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "frontend",
   },
   {
@@ -146,7 +146,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "python",
   },
   {
@@ -155,7 +155,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -164,7 +164,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "frontend",
   },
   {
@@ -173,7 +173,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "python",
   },
   {
@@ -182,7 +182,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -191,7 +191,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "frontend",
   },
   {
@@ -200,7 +200,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "python",
   },
   {
@@ -209,7 +209,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -218,7 +218,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "frontend",
   },
   {
@@ -227,7 +227,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "python",
   },
   {
@@ -236,7 +236,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -245,7 +245,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "frontend",
   },
   {
@@ -254,7 +254,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "python",
   },
   {
@@ -263,7 +263,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -272,7 +272,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "frontend",
   },
   {
@@ -281,7 +281,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "python"],
-    iconPath: "../media/svg/term-cards/term-icon-1.svg",
+    iconPath: "../static/svg/term-cards/term-icon-1.svg",
     keyword: "python",
   },
   {
@@ -290,7 +290,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "wordpress"],
-    iconPath: "../media/svg/term-cards/term-icon-2.svg",
+    iconPath: "../static/svg/term-cards/term-icon-2.svg",
     keyword: "wordpress",
   },
   {
@@ -299,7 +299,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "frontend",
   },
   {
@@ -308,7 +308,7 @@ export const data = [
     titleGeo: "პროექტის მენეჯმენტი",
     Description: "ადამიანური, მატერიალური და დროითი რესურსების დაგეგმვა",
     hashTags: ["გრაფიკულიდიზაინი", "frontend"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "frontend",
   },
   {
@@ -318,7 +318,7 @@ export const data = [
     Description:
       "პროექტი არის დროებითი საქმიანობა უნიკალური პროდუქტის, მომსახურების ან შედეგის შექმნის მიზნით",
     hashTags: ["ციფრულიკომუნიკაციები", "პროექტისმენეჯმენტი"],
-    iconPath: "../media/svg/term-cards/term-icon-3.svg",
+    iconPath: "../static/svg/term-cards/term-icon-3.svg",
     keyword: "frontend",
     weekTerm: true,
   },
