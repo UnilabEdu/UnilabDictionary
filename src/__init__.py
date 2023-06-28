@@ -1,5 +1,9 @@
 from flask import Flask
-from src.extensions import db
+from flask_admin.contrib.sqla import ModelView
+
+from src.models.term import Term, Subject
+from src.extensions import db, migrate
+from src.admin import admin
 from src.config import Config
 from src.views import main_blueprint
 from src.commands import init_db
@@ -15,6 +19,13 @@ def create_app():
     register_extensions(app)
     register_blueprints(app)
     register_commands(app)
+
+    admin.init_app(app)
+    admin.add_view(ModelView(Term, db.session))
+    admin.add_view(ModelView(Subject, db.session))
+
+    migrate.init_app(app, db)
+
 
     return app
 
