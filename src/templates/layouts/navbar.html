@@ -16,5 +16,9 @@
                     </nav>
                 </div>
          </div>
+        <form class="d-flex">
+                <a href="{{ url_for('auth.login') }}" class="btn btn-success mx-2">Login</a>
+                <a href="{{ url_for('auth.register') }}" class="btn btn-success">Register</a>
+        </form>
     </div>
 </header>
