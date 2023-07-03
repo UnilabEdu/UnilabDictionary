@@ -3,7 +3,7 @@ from os import path
 from flask_login import login_user, logout_user
 
 from src.config import Config
-from src.views.auth.forms import RegisterForm, LoginForm
+from src.views.auth.forms import LoginForm, RegisterForm
 from src.models import User
 
 TEMPLATES_FOLDER = path.join(Config.BASE_DIRECTORY, "templates", "auth")
