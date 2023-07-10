@@ -13,21 +13,10 @@
                                 <a class="nav-link" href="{{url_for('main.dictionary')}}">{{"ლექსიკონი"}}</a>
                             </li>
                         </ul>
-                        {% if current_user.is_authenticated and current_user.role.name == "admin" %}
-                            <a href="{{ url_for("admin.index") }}" class="nav-link">Admin Panel</a>
-                        {% endif %}
+
                     </div>
         </nav>
 
-
-        <form class="d-flex">
-            {% if current_user.is_authenticated %}
-                <a href="{{ url_for('auth.logout') }}" class="btn btn-success mx-2">Logout</a>
-            {% else %}
-                <a href="{{ url_for('auth.login') }}" class="btn btn-success mx-2">Login</a>
-            {% endif %}
-            </form>
-            </form>
             </div>
         </nav>
 </header>

@@ -16,11 +16,10 @@ class Term(db.Model):
     __tablename__ = "terms"
 
     id = db.Column(db.Integer, primary_key=True)
+    subject_name=db.Column(db.String)
     description = db.Column(db.String)
     eng_word = db.Column(db.String)
     geo_word = db.Column(db.String)
-    example = db.Column(db.String)
-    photo = db.Column(db.String)
 
     subject_id = db.Column(db.ForeignKey("subject.id"))
     subject = db.relationship("Subject", back_populates="terms")

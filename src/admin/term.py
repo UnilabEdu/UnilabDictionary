@@ -1,6 +1,4 @@
 from sqlalchemy import func
-from wtforms import SelectField, TextAreaField
-from wtforms.validators import DataRequired
 
 from src.admin.base import SecureModelView
 
@@ -9,8 +7,10 @@ class TermView(SecureModelView):
 
     create_modal = True
     edit_modal = True
-    column_editable_list = ["description", "eng_word", "geo_word", "example", "photo"]
-    column_searchable_list = ["description", "eng_word", "geo_word"]
+    column_list = ["subject_name", "eng_word", "geo_word","description"]
+    column_labels = {"subject_name":"მიმართულება", "eng_word": "სიტყვა eng","geo_word" : "სიტყვა ქართ","description":"ახსნა"}
+    column_editable_list = ["subject_name", "eng_word", "geo_word","description"]
+    column_searchable_list = ["subject_name","description", "eng_word", "geo_word"]
 
 
     def get_query(self):
