@@ -34,12 +34,10 @@ def register_extensions(app):
     login_manager.login_view = "auth.login"
 
     admin.init_app(app)
-    admin.add_view(TermView(Term, db.session, name="ტერმინები", category="ტერმინების მართვა"))
-    admin.add_view(ModelView(Subject, db.session, name="მიმართულებები", category="ტერმინების მართვა"))
-    admin.add_view(UserView(User, db.session, name="მომხმარებლები", category="მომხმარებლის მართვა"))
-    admin.add_view(SecureModelView(Role, db.session, name="როლები", category="მომხმარებლის მართვა"))
+    admin.add_view(TermView(Term, db.session, name="ტერმინები"))
+    admin.add_view(SubjectView(Subject, db.session, name="მიმართულებები"))
 
-    admin.add_link(MenuLink("Return", url="/", icon_type="fa", icon_value="fa-sign-out"))
+    admin.add_link(MenuLink("გამოსვლა", url="/", icon_type="fa", icon_value="fa-sign-out"))
 
     @login_manager.user_loader
     def load_user(user_id):

@@ -10,13 +10,15 @@ class SecureModelView(ModelView):
 
     def inaccessible_callback(self, name, **kwargs):
         if not self.is_accessible():
-            return redirect(url_for('main.index'))
+            return redirect(url_for('auth.login'))
 
 
 class CustomAdminIndexView(AdminIndexView):
+    def is_visible(self):
+        return False
     def is_accessible(self):
         return current_user.is_authenticated and current_user.role.name == "admin"
 
     def inaccessible_callback(self, name, **kwargs):
         if not self.is_accessible():
-            return redirect(url_for('main.index'))
+            return redirect(url_for('auth.login'))

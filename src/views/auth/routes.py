@@ -1,6 +1,6 @@
 from flask import Blueprint, render_template, flash, redirect, url_for, request
 from os import path
-from flask_login import login_user, logout_user
+from flask_login import login_user, logout_user, login_required, login_manager
 
 from src.config import Config
 from src.views.auth.forms import LoginForm, RegisterForm
@@ -37,7 +37,7 @@ def login():
             if next:
                 return redirect(next)
             else:
-                return redirect(url_for("main.index"))
+                return redirect(url_for("admin.index"))
         else:
             flash("პაროლი არასწორია")
     return render_template("login.html", form=form)
@@ -46,3 +46,4 @@ def login():
 def logout():
     logout_user()
     return redirect(url_for("main.index"))
+
