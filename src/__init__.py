@@ -36,8 +36,9 @@ def register_extensions(app):
     admin.init_app(app)
     admin.add_view(TermView(Term, db.session, name="ტერმინები"))
     admin.add_view(SubjectView(Subject, db.session, name="მიმართულებები"))
+    admin.add_view(UserView(User, db.session, name="პაროლის შეცვლა"))
 
-    admin.add_link(MenuLink("გამოსვლა", url="/", icon_type="fa", icon_value="fa-sign-out"))
+    admin.add_link(MenuLink("გამოსვლა", url="/logout", icon_type="fa", icon_value="fa-sign-out"))
 
     @login_manager.user_loader
     def load_user(user_id):
