@@ -2,8 +2,9 @@ from flask import Flask
 from flask_admin.contrib.sqla import ModelView
 from flask_admin.menu import MenuLink
 
+
 from src.models.term import Term, Subject
-from src.extensions import db, migrate, login_manager
+from src.extensions import db, migrate, login_manager, ckeditor
 from src.admin import admin, SecureModelView, UserView, TermView, SubjectView
 from src.models import User, Term, Role
 from src.config import Config
@@ -27,6 +28,8 @@ def create_app():
 def register_extensions(app):
 
     db.init_app(app)
+
+    ckeditor.init_app(app)
 
     migrate.init_app(app, db)
 

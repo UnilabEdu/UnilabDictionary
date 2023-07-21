@@ -1,5 +1,6 @@
 from flask import Blueprint, render_template
 from os import path
+from models import Term, Subject
 from src.config import Config
 
 TEMPLATES_FOLDER = path.join(Config.BASE_DIRECTORY, "templates", "main")
@@ -16,11 +17,14 @@ def about():
 
 @main_blueprint.route("/dictionary")
 def dictionary():
-    return render_template("main/dictionary.html")
+    term_list = Term.query.all()
+    return render_template("main/dictionary.html", term_list=term_list)
 
-@main_blueprint.route("/dictionarydetailed")
+@main_blueprint.route("/dictionarydetailed/")
 def dictionary_detailed():
-    return render_template("main/dictionary-detailed.html")
+    terms = Term.query.with_entities(Term.eng_word, Term.geo_word, Term.subject, Term.description, Term.example).limit(1)
+    subjects = Subject.query.with_entities(Subject.course_link, Subject.internship_link, Subject.name).limit(1)
+    return render_template("main/dictionary-detailed.html", terms=terms, subjects=subjects)
 
 @main_blueprint.route("/error")
 def error():

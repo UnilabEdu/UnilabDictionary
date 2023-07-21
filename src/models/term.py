@@ -21,6 +21,7 @@ class Term(db.Model):
 
     id = db.Column(db.Integer, primary_key=True)
     description = db.Column(db.Text)
+    example = db.Column(db.Text)
     eng_word = db.Column(db.String)
     geo_word = db.Column(db.String)
 
