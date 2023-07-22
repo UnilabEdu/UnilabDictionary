@@ -158,7 +158,7 @@ body{
 }
 .term-card{
     color: var(--card-bg);
-    width: 346px;
+    width: 100%;
     background-color: var(--white);
     margin: 20px 0;
     padding: 14px 20px;
@@ -183,7 +183,7 @@ body{
 }
 .term-header-title{
     display: flex;
-    flex-direction: column;
+    flex-direction: row;
 }
 .term-icon{
     display: block;
@@ -202,7 +202,6 @@ body{
     width: 297px;
     height: 47px;
     font-family: 'firaGo-medium';
-    margin-bottom: 10px;
 }
 .term-description{
     font: normal normal 400 14px/17px firaGo-regular;
@@ -407,9 +406,9 @@ body{
 }
 
 .similar-terms-title {
-    color: var(--main-font);
+    color: var(--card-bg);
     font: normal normal 400 20px/24px BPG-regular;
-    border-bottom: 3px solid var(--main-font);
+    border-bottom: 3px solid var(--navigation-hover-state);
     display: inline-block;
     padding: 30px 0 10px 0;
     margin-left: 20px;
@@ -419,7 +418,6 @@ body{
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    margin-top: 10px;
 }
 
 .week-term-description{
@@ -430,22 +428,40 @@ body{
 }
 
 .pagination {
+    display: flex;
+    justify-content: center;
+    align-items: center;
     max-width: 100%;
     text-align: center;
-    padding: 32px 0 2px 0;
+    margin: 32px 0 2px 0;
+    font-family: 'firaGo-regular';
 }
 .pagination span {
     cursor: pointer;
+    height: 100%;
 }
 .pagination-double-left-arrow, .pagination-double-right-arrow{
+    display: inline-block;
     height: 20px;
     width: 20px;
+    transform: rotate(-90deg);
+    margin: 0 10px;
+}
+.double-arrows-wrapper {
+    align-items: center;
+    display: flex;
+    flex-flow: column nowrap;
+    gap: 0px;
+}
+.double-arrows-wrapper svg {
+    height: 100%;
 }
 .pagination-right-arrow, .pagination-left-arrow {
     display: inline-block;
     height: 20px;
     width: 20px;
 }
+
 .pagination-left-arrow{
     transform: rotate(-90deg);
     margin-right: 10px;
@@ -488,7 +504,7 @@ body{
     display: flex;
     justify-content: center;
     align-items: center;
-    flex-direction: column-reverse;
+    flex-direction: column;
     font: normal normal 400 var(--medium) firaGo-regular;
 }
 .footer-info{
@@ -595,7 +611,7 @@ body{
 }
 .alphabet-wrapper .lchange {
     cursor: pointer;
-    margin-left: 60px;
+    /* margin-left: 60px; */
     background-color: var(--card-bg);
     color: var(--white);
     font-size: var(--medium);
@@ -615,9 +631,17 @@ body{
     padding-left: 10px;
     outline: none;
     font-family: 'firaGo-regular';
-    font-weight: 600;
+    font-weight: normal;
     cursor: pointer;
     appearance: none;
+}
+.container .search-block .searchbar form select option {
+    margin: 0 15px;
+    font-weight: normal;
+}
+.container .search-block .searchbar form select option:hover {
+    background: rgba(0, 50, 245, .2);
+    cursor: pointer;
 }
 
 .select-wrapper {
@@ -652,11 +676,12 @@ body{
 
 #filter, #sort {
     /* width: 100%; */
-    padding-right: 1.2rem;
+    /* padding-right: 1.2rem; */
     border-radius: 5px;
     background-color: #F5F8FD;
     border: none;
     color: #343645;
+
 }
 
 #filter {
@@ -664,13 +689,12 @@ body{
     margin-right: 1.25rem;
 }
 #sort {
-    width: 144px;
+    width: 285px;
 }
 
 option {
     color: var(--main-font);
     font-family: 'firaGo-regular';
-    font-weight: bold;
 }
 
 .container .search-block input[type=text] {
@@ -817,13 +841,16 @@ option {
     justify-content: space-between;
     align-items: center;
 }
-.letter-box.geo:not(:last-child) {
+.letter-box{
+    font-family: 'FiraGo-Regular', sans-serif;
+}
+/* .letter-box.geo:not(:last-child) {
     margin-right: 5px;
 }
 .letter-box:not(:last-child) {
     margin-right: 10px;
-}
-.term-card.fullsize {
+} */
+/* .term-card.fullsize {
     width: 100%;
 }
 .term-card.fullsize .term-header-title {
@@ -831,7 +858,7 @@ option {
 }
 .term-card.fullsize .card-body {
     width: 80%;
-}
+} */
 /* swiper */
 .swiper-container {
     position: relative;
@@ -842,8 +869,8 @@ option {
     width: 100%;
     height: 30px;
     display: none;
-    padding-left: 35px;
-    padding-right: 35px;
+    /* padding-left: 35px;
+    padding-right: 35px; */
 }
 .swiper-wrapper{
     /* width: 100%; */
@@ -852,9 +879,18 @@ option {
 .swiper-slide {
     cursor: pointer;
     text-align: center;
-    width: calc((100%)/10) !important;
-    /* background-color: red; */
+    font-family: 'firaGo-regular', sans-serif;
+    width: calc((100%)/10);
 }
+.alphabet-toUpperCase{
+    text-transform: uppercase;
+}
+.alphabet-toLowerCase{
+    text-transform: lowercase;
+}
+.swiper-free-mode>.swiper-wrapper {
+     margin: 0 !important;
+} 
 .swiper-horizontal .swiper-scrollbar {
     bottom: 1px;
 }

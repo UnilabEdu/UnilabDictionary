@@ -17,7 +17,7 @@ firstHashtag.textContent = "#" + weekTerm[0].hashTags[0];
 secondHashtag.textContent = "#" + weekTerm[0].hashTags[1];
 console.log(weekTerm);
 const dataToRender = data.filter((item) => item.id < 3);
-renderData(dataToRender);
+// renderData(dataToRender);
 if (document.body.offsetWidth < 769) {
   const cards = document.querySelectorAll(".term-card");
   cards.forEach((card) => {
