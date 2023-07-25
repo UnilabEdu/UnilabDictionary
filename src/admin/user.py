@@ -13,7 +13,8 @@ class UserView(SecureModelView):
     can_delete = False
     edit_modal = True
 
-    form_excluded_columns = ('username')
+    column_list = ['username','_password']
+    form_excluded_columns = ('username', 'role')
 
     form_extra_fields = {"old_password": PasswordField("ძველი პაროლი", validators=[DataRequired()]),
                          "new_password": PasswordField("ახალი პაროლი", validators=[DataRequired()]),

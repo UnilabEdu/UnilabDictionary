@@ -20,10 +20,11 @@ class Term(db.Model):
     __tablename__ = "terms"
 
     id = db.Column(db.Integer, primary_key=True)
-    description = db.Column(db.Text)
-    example = db.Column(db.Text)
+    description = db.Column(db.String)
+    example = db.Column(db.String)
     eng_word = db.Column(db.String)
     geo_word = db.Column(db.String)
+    img = db.Column(db.String)
 
     subject_id = db.Column(db.ForeignKey("subject.id"))
     subject = db.relationship("Subject", back_populates="terms")
@@ -32,4 +33,4 @@ class Term(db.Model):
     parent_word_rel = db.relationship("Term", remote_side="Term.id", backref="parent_word")
 
     def __repr__(self):
-        return f"{self.geo_word}"
+        return f"{self.geo_word} {self.description}"

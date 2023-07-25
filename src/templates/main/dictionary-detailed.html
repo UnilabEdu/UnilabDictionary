@@ -3,10 +3,10 @@
 {% block body %}
     <main class="container">
       <article class="term-detailed">
-        {% for term in terms %}
-        <h2>{{term.eng_word}} - {{term.geo_word}}</h2>
+
+        <h2>{{detailed_term.eng_word}} - {{detailed_term.geo_word}}</h2>
         <p>
-          {{term.description}}
+          {{detailed_term.description|safe}}
         </p>
 
         <hr class="content-differ" />
@@ -15,20 +15,19 @@
             <h4 class="example">მაგალითი</h4>
             <p id="termExample">
 
-              {{term.example}}
+              {{detailed_term.example|safe}}
 
             </p>
           </div>
-          {% endfor %}
           <div class="example-img-wrapper">
-            <img class="example-img" src="{{url_for('static', filename='/png/unknown.png')}}">
+            <img class="example-img" src="{{url_for('static', filename ='uploads/stazhireba-unilabshi-300x228.jpg') }}">
           </div>
         </div>
-        {% for subject in subjects %}
+
         <div class="hashtag-wrapper">
           <a href="{{url_for('main.dictionary')}}"
             ><span class="desc-tag" id="hashtag0"
-              >{{subject.name}}</span
+              >{{detailed_subject.name}}</span
             ></a
           >
           <a href="#"
@@ -38,16 +37,15 @@
             ><span class="desc-tag" id="hashtag2"></span></a
           >
         </div>
-        {% endfor %}
       </article>
 
 
 
       <div class="terms-button-wrapper">
-        {% for subject in subjects %}
-        <a href = {{subject.course_link}}>კურსის ნახვა</a>
-        <a href = {{subject.internship_link}}>სტაჟირების ნახვა</a>
-        {% endfor %}
+
+        <a href = {{detailed_subject.course_link}}>კურსის ნახვა</a>
+        <a href = {{detailed_subject.internship_link}}>სტაჟირების ნახვა</a>
+        
       </div>
     </main>
 

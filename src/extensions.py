@@ -4,6 +4,7 @@ from flask_login import LoginManager
 from flask_ckeditor import CKEditor
 
 
+
 db = SQLAlchemy()
 migrate = Migrate()
 login_manager = LoginManager()

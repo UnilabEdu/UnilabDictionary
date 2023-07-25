@@ -25,7 +25,7 @@ $(".meet-team-wrapper").slick({
   speed: 300,
   slidesToShow: 4,
   slidesToScroll: 2,
-  centerMode: true,
+  centerMode: false,
   responsive: [
     {
       breakpoint: 1024,
