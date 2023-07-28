@@ -1,59 +1,55 @@
 {% extends "layouts/base.html" %}
 
 {% block body %}
-
     <main class="container">
       <article class="term-detailed">
-        <h2 id="term">WATERFALL MODEL - ჩანჩქერის მოდელი</h2>
-        <p id="termDesc">
-          Waterfall model, იგივე, ჩანჩქერის მოდელი პროექტის მართვის ყველაზე
-          ძველი მოდელია. ამ მოდელის გამოყენებისას პროექტი იყოფა
-          წინასწარგანსაზღვრულ და კონკრეტული თანმიმდევრობით დალაგებულ ფაზებათ. ამ
-          მოდელში პროქეტის მიმდინარეობა გავს კასკადურ, საფეხუროვან ჩანჩქერს.
-          თითოეული ფაზა იწყება მხოლოდ წინა ფაზის დასრულების შემდეგ, რაც უკვე
-          დასრულებულ ფაზაში ცვლილებების შეტანას ძალიან ართულებს.
+
+        <h2>{{detailed_term.eng_word}} - {{detailed_term.geo_word}}</h2>
+        <p>
+          {{detailed_term.description|safe}}
         </p>
+
         <hr class="content-differ" />
         <div class="example-flexbox">
           <div>
             <h4 class="example">მაგალითი</h4>
             <p id="termExample">
-              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-              eiusmod tempor incididunt ut labore et dolore magna aliqua.Lorem
-              ipsum dolor sit amet, consectetur Lorem ipsum dolor sit amet,
-              consectetur adipiscing elit, sed do eiusmod tempor incididunt ut
-              labore et dolore magna
+
+              {{detailed_term.example|safe}}
+
             </p>
           </div>
           <div class="example-img-wrapper">
-            <img class="example-img" src="{{url_for('static', filename='/png/unknown.png')}}">
+            <img class="example-img" src="{{url_for('static', filename ='uploads/stazhireba-unilabshi-300x228.jpg') }}">
           </div>
         </div>
+
         <div class="hashtag-wrapper">
-          <a href="#"
+          <a href="{{url_for('main.dictionary')}}"
             ><span class="desc-tag" id="hashtag0"
-              >#ციფრულიკომუნიკაციები</span
+              >{{detailed_subject.name}}</span
             ></a
           >
           <a href="#"
-            ><span class="desc-tag" id="hashtag1">#პროექტისმენეჯმენტი</span></a
+            ><span class="desc-tag" id="hashtag1"></span></a
           >
           <a href="#"
-            ><span class="desc-tag" id="hashtag2">#ICTპროექტებისმართვა</span></a
+            ><span class="desc-tag" id="hashtag2"></span></a
           >
         </div>
       </article>
-      <h2 class="similar-terms-title">მსგავსი ტერმინები</h2>
-      <div class="flex-wrap-main">
-        <div class="term-cards-wrapper"></div>
-      </div>
+
+
+
       <div class="terms-button-wrapper">
-        <a href="#">კურსის ნახვა</a>
-        <a href="#">რეგისტრაცია კურსზე</a>
-        <a href="#">რეგისტრაცია სტაჟირებაზე</a>
+
+        <a href = {{detailed_subject.course_link}}>კურსის ნახვა</a>
+        <a href = {{detailed_subject.internship_link}}>სტაჟირების ნახვა</a>
+        
       </div>
     </main>
 
     <script type="module" src="static/js/main.js"></script>
     <script type="module" src="static/js/detailed.js"></script>
+
 {% endblock %}

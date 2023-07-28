@@ -1,0 +1,8 @@
+{% extends 'admin/model/edit.html' %}
+
+{% block tail %}
+    {{ super() }}
+    {{ ckeditor.load() }}
+    {{ ckeditor.config(name='description') }}
+    {{ ckeditor.config(name='example') }}
+{% endblock %}

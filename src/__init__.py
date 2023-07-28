@@ -2,8 +2,9 @@ from flask import Flask
 from flask_admin.contrib.sqla import ModelView
 from flask_admin.menu import MenuLink
 
+
 from src.models.term import Term, Subject
-from src.extensions import db, migrate, login_manager
+from src.extensions import db, migrate, login_manager, ckeditor
 from src.admin import admin, SecureModelView, UserView, TermView, SubjectView
 from src.models import User, Term, Role
 from src.config import Config
@@ -28,6 +29,8 @@ def register_extensions(app):
 
     db.init_app(app)
 
+    ckeditor.init_app(app)
+
     migrate.init_app(app, db)
 
     login_manager.init_app(app)
@@ -36,8 +39,9 @@ def register_extensions(app):
     admin.init_app(app)
     admin.add_view(TermView(Term, db.session, name="ტერმინები"))
     admin.add_view(SubjectView(Subject, db.session, name="მიმართულებები"))
+    admin.add_view(UserView(User, db.session, name="პაროლის შეცვლა"))
 
-    admin.add_link(MenuLink("გამოსვლა", url="/", icon_type="fa", icon_value="fa-sign-out"))
+    admin.add_link(MenuLink("გამოსვლა", url="/logout", icon_type="fa", icon_value="fa-sign-out"))
 
     @login_manager.user_loader
     def load_user(user_id):
