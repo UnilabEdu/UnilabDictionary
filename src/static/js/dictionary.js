@@ -48,7 +48,7 @@ window.onload = () => {
 }
 // initiate first page on window load
 // generating 9 cards per page
-paginationRender(data)
+// paginationRender(data)
 function paginationRender(arr) {
     paginationWrapper.innerHTML = '';
     const roundedTermsNum = Math.ceil(arr.length / termsPerPage)
@@ -203,7 +203,7 @@ searchFilter.addEventListener('change', () => {
     searchCounter(searchFilterData)
     if (searchFilter.value !== 'default') {
         cardsWrapper.innerHTML = ''
-        paginationRender(searchFilterData)
+        // paginationRender(searchFilterData)
     }
 })
 
@@ -214,7 +214,7 @@ search.addEventListener('input', (e) => {
     if (filteredData.length < 10 && filteredData.length !== 0) {
         notFoundMessage.style.display = 'none'
         searchCounter(filteredData)
-        paginationRender(filteredData)
+        // paginationRender(filteredData)
         if (filteredData.length === 1) {
             cardsWrapper.style.justifyContent = 'flex-start'
         }
@@ -231,7 +231,7 @@ search.addEventListener('input', (e) => {
         messageWrapper.style.display = 'none'
     } else if (e.target.value !== '' && filteredData.length >= 10) {
         searchCounter(filteredData)
-        paginationRender(filteredData)
+        // paginationRender(filteredData)
         notFoundMessage.style.display = 'none'
 
     }
