@@ -34,7 +34,7 @@
     <article class="search-block">
         <div class="searchbar">
             <form action="">
-                <input id="dictionary-search" type="text" placeholder="ძიება" name="search">
+                <input id="search" type="text" placeholder="ძიება" name="search">
                 <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                     <path
                         d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z" />
@@ -59,11 +59,11 @@
                     <div class="select">
                         <select name="sort" id="sort">
                             <option value="default" selected disabled hidden>სორტირება</option>
-                            <option value="ICT">ანბანის ზრდადობის მიხედვით</option>
-                            <option value="wordpress">ანბაბის კლებადობის მიხედვით</option>
-                            <option value="frontend">პოპულარობის მიხედვით</option>
-                            <option value="graphicdesign">ახალი დამატებული</option>
-                            <option value="python">ძველი დამატებული</option>
+                            <option value="asc">ანბანის ზრდადობის მიხედვით</option>
+                            <option value="desc">ანბაბის კლებადობის მიხედვით</option>
+                            <option value="popular">პოპულარობის მიხედვით</option>
+                            <option value="newest">ახალი დამატებული</option>
+                            <option value="oldest">ძველი დამატებული</option>
                         </select>
                         <div class="custom-arrow last">
                             <img src="{{url_for('static', filename='/svg/generic/dropdown-arrow.svg')}}"
