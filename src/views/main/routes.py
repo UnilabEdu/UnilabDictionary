@@ -11,8 +11,7 @@ main_blueprint = Blueprint("main", __name__, template_folder="TEMPLATES_FOLDER")
 @main_blueprint.route("/",methods=["GET", "POST"])
 def index():
     terms_list = Term.query.limit(3)
-    subjects_list = Subject.query.limit(1)
-    return render_template("main/index.html", terms_3=terms_list, subjects_3=subjects_list)
+    return render_template("main/index.html", terms_3=terms_list)
 
 @main_blueprint.route("/about")
 def about():
@@ -20,8 +19,7 @@ def about():
 @main_blueprint.route("/dictionary")
 def dictionary():
     term_list = Term.query.paginate(per_page=4, max_per_page=100)
-    subject_list = Subject.query.limit(1)
-    return render_template("main/dictionary.html", terms=term_list, subjects=subject_list)
+    return render_template("main/dictionary.html", terms=term_list)
 
 @main_blueprint.route("/dictionarydetailed/<int:id>")
 def dictionary_detailed(id):

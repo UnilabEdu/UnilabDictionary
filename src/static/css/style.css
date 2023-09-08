@@ -199,9 +199,11 @@ body{
 
 /* card body */
 .card-body{
-    width: 297px;
-    height: 47px;
+    width: 80%;
+    height: 1em;
     font-family: 'firaGo-medium';
+    overflow: hidden;
+    margin-bottom: 1em;
 }
 .term-description{
     font: normal normal 400 14px/17px firaGo-regular;

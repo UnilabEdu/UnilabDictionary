@@ -34,15 +34,15 @@
     <article class="search-block">
         <div class="searchbar">
             <form action="">
-                <input id="dictionary-search" type="text" placeholder="ძიება" name="search">
+                <input id="search" type="text" placeholder="ძიება" name="search">
                 <svg width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd" clip-rule="evenodd">
                     <path
-                        d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z" />
+                            d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/>
                 </svg>
                 <div class="select-wrapper" id="dropdown-wrapper">
                     <div class="select">
                         <select name="filter" id="filter">
-                            <option value="default" selected disabled hidden>ფილტრი</option>
+                            <option value="default selected disabled hidde">ფილტრი</option>
                             <option value="ICT">ICT პროექტების მართვა</option>
                             <option value="wordpress">WordPress</option>
                             <option value="frontend">Front End</option>
@@ -53,21 +53,20 @@
                         </select>
                         <div class="custom-arrow">
                             <img class="hihi" src="{{url_for('static', filename='/svg/generic/dropdown-arrow.svg')}}"
-                                alt="dropdown-arrow">
+                                 alt="dropdown-arrow">
                         </div>
                     </div>
                     <div class="select">
                         <select name="sort" id="sort">
-                            <option value="default" selected disabled hidden>სორტირება</option>
-                            <option value="ICT">ანბანის ზრდადობის მიხედვით</option>
-                            <option value="wordpress">ანბაბის კლებადობის მიხედვით</option>
-                            <option value="frontend">პოპულარობის მიხედვით</option>
-                            <option value="graphicdesign">ახალი დამატებული</option>
-                            <option value="python">ძველი დამატებული</option>
+                            <option value="asc">ანბანის ზრდადობის მიხედვით</option>
+                            <option value="desc">ანბაბის კლებადობის მიხედვით</option>
+                            <option value="popular">პოპულარობის მიხედვით</option>
+                            <option value="newest">ახალი დამატებული</option>
+                            <option value="oldest">ძველი დამატებული</option>
                         </select>
                         <div class="custom-arrow last">
                             <img src="{{url_for('static', filename='/svg/generic/dropdown-arrow.svg')}}"
-                                alt="dropdown-arrow">
+                                 alt="dropdown-arrow">
                         </div>
                     </div>
                 </div>
@@ -80,67 +79,117 @@
     <div class="not-found-message-wrapper">
         <h6 class="not-found-message">ტერმინი ვერ მოიძებნა</h6>
     </div>
+
     {% for term in terms %}
-
     <div class="term-cards-wrapper">
-
         <div class="term-card">
             <div class="card-header">
                 <span class="term-icon">
                     <img src="{{url_for('static', filename='/svg/term-cards/term-icon-1.svg')}}">
                 </span>
-                <h3 class="term-header-title"><span>{{term.eng_word|safe}} -&nbsp;</span><span>{{term.geo_word|safe}}</span>
+                <h3 class="term-header-title">
+                    <span>{{term.eng_word|safe}} -&nbsp;</span>
+                    <span>{{term.geo_word|safe}}</span>
                 </h3>
             </div>
             <div class="card-body">
                 <p class="term-description">{{term.description [0:100]|safe}} {{'...'}}
                 </p>
             </div>
-
-            {% for subject in subjects %}
             <div class="card-footer">
                 <div class="hashtag-keywords">
-                    <a href={{subject.course_link|safe}}>{{subject.name|safe}}</span></a>
+                    <a href=#>{{term.subject|safe}}</span></a>
                 </div>
                 <div class="button-wrapper">
                     <a href="{{ url_for('main.dictionary_detailed', id=term.id) }}" class="see-details">ნახე სრულად</a>
                 </div>
             </div>
-            {% endfor %}
         </div>
     </div>
+    {% endfor %}
 
 
-<!--    {% if terms.has_prev %}-->
-<!--    <li>-->
-<!--        <a href="{{ url_for('main.dictionary', page=terms.prev_num) }}">წინა გვერდი</a>-->
-<!--    </li>-->
-    {% endif %}
-    {% for page_num in terms.iter_pages() %}
-        {% if page_num %}
-            <li>
-                <a href="{{ url_for('main.dictionary', page=page_num) }}">{{ page_num }}</a>
-            </li>
-             {% else %}
-            <li class="active">
-                <a href="#">{{ page_num }}</a>
-            </li>
+
+    <div class="pagination">
+        {% if terms.has_prev %}
+        <a href="{{ url_for('main.dictionary', page=1) }}" class="pagination-double-left-arrow">
+            <span  class="double-arrows-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12.51" height="8.893" viewBox="0 0 12.51 8.893">
+                    <g id="noun_Arrow_2884045" transform="translate(12.51) rotate(90)">
+                        <path id="Path_3" data-name="Path 3"
+                            d="M8.307,12.51.207,6.66a.5.5,0,0,1,0-.81L8.307,0l.586.811L1.354,6.255,8.893,11.7Z"
+                            transform="translate(0 0)" fill="#8a8fa3" opacity="0.63">
+
+                        </path>
+                    </g>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12.51" height="8.893" viewBox="0 0 12.51 8.893">
+                    <g id="noun_Arrow_2884045" transform="translate(12.51) rotate(90)">
+                        <path id="Path_3" data-name="Path 3"
+                            d="M8.307,12.51.207,6.66a.5.5,0,0,1,0-.81L8.307,0l.586.811L1.354,6.255,8.893,11.7Z"
+                            transform="translate(0 0)" fill="#8a8fa3" opacity="0.63">
+
+                        </path>
+                    </g>
+                </svg>
+            </span>
+        </a>
+            <a href="{{ url_for('main.dictionary', page=terms.prev_num) }}" class="pagination-left-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12.51" height="8.893" viewBox="0 0 12.51 8.893">
+                    <g id="noun_Arrow_2884045" transform="translate(12.51) rotate(90)">
+                        <path id="Path_3" data-name="Path 3"
+                              d="M8.307,12.51.207,6.66a.5.5,0,0,1,0-.81L8.307,0l.586.811L1.354,6.255,8.893,11.7Z"
+                              transform="translate(0 0)" fill="#8a8fa3" opacity="0.63">
+                        </path>
+                    </g>
+                </svg>
+            </a>
         {% endif %}
-        {% else %}
-           <li>
-               <span class="ellipsis" style="white-space; nowrap; overflow: hidden; text-overflow: ellipsis">…</span>
-           </li>
-    {% endfor %}
 
-<!--    {% if terms.has_next %}-->
-<!--    <li>-->
-<!--        <a href="{{ url_for('main.dictionary', page=terms.next_num) }}">შემდეგი გვერდი</a></li>-->
-<!--    {% endif %}-->
+        {% for page_num in terms.iter_pages() %}
+            {% if page_num %}
+                {% if page_num != terms.page %}
+                    <a href="{{ url_for('main.dictionary', page=page_num) }}" class="page-number">{{ page_num }}</a>
+                {% else %}
+                    <span class="page-number active-page">{{ page_num }}</span>
+                {% endif %}
+            {% endif %}
+        {% endfor %}
 
-    {% endfor %}
-     <div class="pagination"></div>
+        {% if terms.has_next %}
+        <a href="{{ url_for('main.dictionary', page=terms.next_num) }}" class="pagination-right-arrow">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12.51" height="8.893" viewBox="0 0 12.51 8.893">
+                    <g id="noun_Arrow_2884045" transform="translate(0 8.893) rotate(-90)">
+                        <path id="Path_3" data-name="Path 3"
+                              d="M8.307,0,.207,5.85a.5.5,0,0,0,0,.81l8.1,5.85.586-.811L1.354,6.255,8.893.81Z" fill="#8a8fa3"
+                              opacity="0.63">
+                        </path>
+                    </g>
+                </svg>
+            </a>
+        <a href="{{ url_for('main.dictionary', page=terms.pages) }}"class="pagination-double-right-arrow">
+            <span class="double-arrows-wrapper">
+                <svg xmlns="http://www.w3.org/2000/svg" width="12.51" height="8.893" viewBox="0 0 12.51 8.893">
+                    <g id="noun_Arrow_2884045" transform="translate(0 8.893) rotate(-90)">
+                        <path id="Path_3" data-name="Path 3"
+                            d="M8.307,0,.207,5.85a.5.5,0,0,0,0,.81l8.1,5.85.586-.811L1.354,6.255,8.893.81Z"
+                            fill="#8a8fa3" opacity="0.63">
+                        </path>
+                    </g>
+                </svg>
+                <svg xmlns="http://www.w3.org/2000/svg" width="12.51" height="8.893" viewBox="0 0 12.51 8.893">
+                    <g id="noun_Arrow_2884045" transform="translate(0 8.893) rotate(-90)">
+                        <path id="Path_3" data-name="Path 3"
+                            d="M8.307,0,.207,5.85a.5.5,0,0,0,0,.81l8.1,5.85.586-.811L1.354,6.255,8.893.81Z"
+                            fill="#8a8fa3" opacity="0.63">
+                        </path>
+                    </g>
+                </svg>
+            </span>
+        </a>
+        {% endif %}
+    </div>
+
 </main>
-<!-- <script src="https://unpkg.com/swiper@8/swiper-bundle.min.js"></script> -->
-<!-- <script type="module" src="../js/main.js"></script> -->
 <script type="module" src="static/js/dictionary.js"></script>
 {% endblock %}

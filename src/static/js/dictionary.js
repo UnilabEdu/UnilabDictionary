@@ -15,7 +15,9 @@ const messageWrapper = document.querySelector('.counter-wrapper')
 const notFoundMessage = document.querySelector('.not-found-message-wrapper')
 const paginationWrapper = document.querySelector('.pagination')
 let termsPerPage = 9
-let paginationResult
+let paginationResult;
+const selects = document.querySelectorAll('#dropdown-wrapper .select select')
+let usp = new URLSearchParams()
 if (document.body.offsetWidth < 480) {
     termsPerPage = 3
 } else if (document.body.offsetWidth < 991) {
@@ -48,7 +50,7 @@ window.onload = () => {
 }
 // initiate first page on window load
 // generating 9 cards per page
-paginationRender(data)
+//paginationRender(data)
 function paginationRender(arr) {
     paginationWrapper.innerHTML = '';
     const roundedTermsNum = Math.ceil(arr.length / termsPerPage)
@@ -203,18 +205,18 @@ searchFilter.addEventListener('change', () => {
     searchCounter(searchFilterData)
     if (searchFilter.value !== 'default') {
         cardsWrapper.innerHTML = ''
-        paginationRender(searchFilterData)
+        //paginationRender(searchFilterData)
     }
 })
 
-const search = document.querySelector('#dictionary-search')
+const search = document.querySelector('#search')
 search.addEventListener('input', (e) => {
     // cardsWrapper.innerHTML = ''
     const filteredData = data.filter(item => item.titleEng.toLowerCase().includes(e.target.value.toLowerCase()) || item.titleGeo.includes(e.target.value))
     if (filteredData.length < 10 && filteredData.length !== 0) {
         notFoundMessage.style.display = 'none'
         searchCounter(filteredData)
-        paginationRender(filteredData)
+        //paginationRender(filteredData)
         if (filteredData.length === 1) {
             cardsWrapper.style.justifyContent = 'flex-start'
         }
@@ -231,7 +233,7 @@ search.addEventListener('input', (e) => {
         messageWrapper.style.display = 'none'
     } else if (e.target.value !== '' && filteredData.length >= 10) {
         searchCounter(filteredData)
-        paginationRender(filteredData)
+        //paginationRender(filteredData)
         notFoundMessage.style.display = 'none'
 
     }
@@ -331,3 +333,26 @@ function swiperInit(arr) {
 
 
 
+function urlUpdate(item){
+    item.addEventListener("input", function(e) {
+        const selectedValue = e.target.value;
+        const itemID = this.getAttribute('id')
+        usp.set(itemID, selectedValue)
+        const newUrl = window.location.pathname + '?' + usp.toString();
+        window.history.pushState({},'', newUrl)
+      });
+}
+
+    // updates url by filter and sort
+function filterSort(){
+    selects.forEach(function (item) {
+            urlUpdate(item)
+    })
+}
+filterSort();
+
+    // updates url by input
+function searchFunc(text){
+    urlUpdate(text)
+}
+searchFunc(search)
