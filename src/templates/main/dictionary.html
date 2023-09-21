@@ -39,28 +39,30 @@
                     <path
                             d="M15.853 16.56c-1.683 1.517-3.911 2.44-6.353 2.44-5.243 0-9.5-4.257-9.5-9.5s4.257-9.5 9.5-9.5 9.5 4.257 9.5 9.5c0 2.442-.923 4.67-2.44 6.353l7.44 7.44-.707.707-7.44-7.44zm-6.353-15.56c4.691 0 8.5 3.809 8.5 8.5s-3.809 8.5-8.5 8.5-8.5-3.809-8.5-8.5 3.809-8.5 8.5-8.5z"/>
                 </svg>
+
                 <div class="select-wrapper" id="dropdown-wrapper">
-                    <div class="select">
+
+                    <div class="select" >
+
                         <select name="filter" id="filter">
-                            <option value="default selected disabled hidde">ფილტრი</option>
-                            <option value="ICT">ICT პროექტების მართვა</option>
-                            <option value="wordpress">WordPress</option>
-                            <option value="frontend">Front End</option>
-                            <option value="graphicdesign">გრაფიკული დიზაინი</option>
-                            <option value="python">Python</option>
-                            <option value="narrativedesign">ნარატივ დიზაინი</option>
-                            <option value="digitalcommunications">ციფრული კომუნიკაციები</option>
+                            <option value="none">ფილტრი</option>
+                            {% for subject in subjects %}
+                            <option value="{{subject.id}}">{{subject.name}}</option>
+                            {% endfor %}
+
                         </select>
+
                         <div class="custom-arrow">
                             <img class="hihi" src="{{url_for('static', filename='/svg/generic/dropdown-arrow.svg')}}"
                                  alt="dropdown-arrow">
                         </div>
                     </div>
+
                     <div class="select">
                         <select name="sort" id="sort">
                             <option value="asc">ანბანის ზრდადობის მიხედვით</option>
                             <option value="desc">ანბაბის კლებადობის მიხედვით</option>
-                            <option value="popular">პოპულარობის მიხედვით</option>
+<!--                            <option value="popular">პოპულარობის მიხედვით</option>-->
                             <option value="newest">ახალი დამატებული</option>
                             <option value="oldest">ძველი დამატებული</option>
                         </select>
@@ -70,15 +72,18 @@
                         </div>
                     </div>
                 </div>
+
             </form>
         </div>
     </article>
-    <div class="counter-wrapper">
-        <span>ძიების შედეგი : </span><strong><span class="search-result-counter">0</span></strong>
+    <div class="counter-wrapper" style="display: block;">
+        <span>ძიების შედეგი : </span><strong><span class="search-result-counter">{{terms.total}}</span></strong>
     </div>
-    <div class="not-found-message-wrapper">
+    {% if not terms.items %}
+    <div class="not-found-message-wrapper" style="display: flex;">
         <h6 class="not-found-message">ტერმინი ვერ მოიძებნა</h6>
     </div>
+    {% endif %}
 
     {% for term in terms %}
     <div class="term-cards-wrapper">
@@ -98,7 +103,9 @@
             </div>
             <div class="card-footer">
                 <div class="hashtag-keywords">
-                    <a href=#>{{term.subject|safe}}</span></a>
+                    {% for subject in term.subject %}
+                    <a href="{{ url_for('main.dictionary', filter=subject.id)}}">{{ subject.name }}</a>
+                    {% endfor %}
                 </div>
                 <div class="button-wrapper">
                     <a href="{{ url_for('main.dictionary_detailed', id=term.id) }}" class="see-details">ნახე სრულად</a>
@@ -107,7 +114,6 @@
         </div>
     </div>
     {% endfor %}
-
 
 
     <div class="pagination">

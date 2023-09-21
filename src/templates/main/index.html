@@ -15,7 +15,7 @@
         </div>
     </article>
     <div class="main-input-wrapper">
-        <form action="templates/main/dictionary.html" class="input-form">
+        <form action="#" class="input-form">
             <input class="main-input" type="text" placeholder="ძიება" id="main-search" required>
         </form>
         <svg class="search-icon" width="24" height="24" xmlns="http://www.w3.org/2000/svg" fill-rule="evenodd"
@@ -42,7 +42,11 @@
             </div>
             <div class="card-footer">
                 <div class="hashtag-keywords">
-                    <a href=#><span>{{term.subject|safe}}</span></a>
+                    {% for subject in term.subject %}
+                    <a href="{{url_for('main.dictionary', filter=subject.id)}}">
+                        <span>{{subject}}</span>
+                    </a>
+                    {% endfor %}
                 </div>
                 <div class="button-wrapper">
                     <a href="{{ url_for('main.dictionary_detailed', id=term.id) }}" class="see-details">ნახე სრულად</a>

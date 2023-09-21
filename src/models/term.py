@@ -33,7 +33,6 @@ class Term(db.Model):
     geo_word = db.Column(db.String)
     img = db.Column(db.String)
 
-    subject_id = db.Column(db.ForeignKey("subjects.id"))
     subject = db.relationship("Subject", secondary="subjects_terms", back_populates="terms")
 
     parent_word_id = db.Column(db.Integer, db.ForeignKey("terms.id"))
@@ -41,3 +40,5 @@ class Term(db.Model):
 
     def __repr__(self):
         return f"{self.geo_word}"
+
+

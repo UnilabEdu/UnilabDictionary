@@ -24,27 +24,25 @@
     </div>
 
     <div class="hashtag-wrapper">
-      <a href="{{url_for('main.dictionary')}}"
-      ><span class="desc-tag" id="hashtag0"
-      >{{detailed_term.subject}}</span
-      ></a
-      >
-      <a href="#"
-      ><span class="desc-tag" id="hashtag1"></span></a
-      >
-      <a href="#"
-      ><span class="desc-tag" id="hashtag2"></span></a
-      >
+      {% for subject in detailed_term.subject %}
+      <a href="{{url_for('main.dictionary', filter=subject.id)}}">
+        <span class="desc-tag" id="hashtag0">{{subject}}</span>
+      </a>
+      {% endfor %}
     </div>
   </article>
   <h2 class="similar-terms-title">მსგავსი ტერმინები</h2>
-  <span class="flex-wrap-main">
-    <span class="term-cards-wrapper"></span>
-  </span>
+    <div class="flex-wrap-main">
+      <div class="term-cards-wrapper"></div>
+    </div>
 
   <div class="terms-button-wrapper">
-    <a href={{detailed_subject.course_link}}>კურსის ნახვა</a>
-    <a href={{detailed_subject.internship_link}}>სტაჟირების ნახვა</a>
+    {% if detailed_subject.course_link %}
+    <a href="{{ detailed_subject.course_link }}">კურსის ნახვა</a>
+    {% endif %}
+    {% if detailed_subject.internship_link %}
+    <a href="{{ detailed_subject.internship_link }}">სტაჟირების ნახვა</a>
+    {% endif %}
   </div>
 
 </main>
