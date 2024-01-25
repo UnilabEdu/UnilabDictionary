@@ -1,55 +1,53 @@
 {% extends "layouts/base.html" %}
 
 {% block body %}
-    <main class="container">
-      <article class="term-detailed">
 
-        <h2>{{detailed_term.eng_word}} - {{detailed_term.geo_word}}</h2>
-        <p>
-          {{detailed_term.description|safe}}
+<main class="container">
+  <article class="term-detailed">
+    <h2>{{detailed_term.eng_word}} - {{detailed_term.geo_word}}</h2>
+    <p>
+      {{detailed_term.description|safe}}
+    </p>
+    <hr class="content-differ"/>
+    <div class="example-flexbox">
+      <div>
+        <h4 class="example">მაგალითი</h4>
+        <p id="termExample">
+          {{detailed_term.example|safe}}
         </p>
-
-        <hr class="content-differ" />
-        <div class="example-flexbox">
-          <div>
-            <h4 class="example">მაგალითი</h4>
-            <p id="termExample">
-
-              {{detailed_term.example|safe}}
-
-            </p>
-          </div>
-          <div class="example-img-wrapper">
-            <img class="example-img" src="{{url_for('static', filename ='uploads/stazhireba-unilabshi-300x228.jpg') }}">
-          </div>
-        </div>
-
-        <div class="hashtag-wrapper">
-          <a href="{{url_for('main.dictionary')}}"
-            ><span class="desc-tag" id="hashtag0"
-              >{{detailed_subject.name}}</span
-            ></a
-          >
-          <a href="#"
-            ><span class="desc-tag" id="hashtag1"></span></a
-          >
-          <a href="#"
-            ><span class="desc-tag" id="hashtag2"></span></a
-          >
-        </div>
-      </article>
-
-
-
-      <div class="terms-button-wrapper">
-
-        <a href = {{detailed_subject.course_link}}>კურსის ნახვა</a>
-        <a href = {{detailed_subject.internship_link}}>სტაჟირების ნახვა</a>
-        
       </div>
-    </main>
+      <div class="example-img-wrapper">
+        {% if detailed_term.img %}
+          <img class="example-img" src="{{url_for('static', filename ='uploads/' + detailed_term.img)}}">
+        {% endif %}
+      </div>
+    </div>
 
-    <script type="module" src="static/js/main.js"></script>
-    <script type="module" src="static/js/detailed.js"></script>
+    <div class="hashtag-wrapper">
+      {% for subject in detailed_term.subject %}
+      <a href="{{url_for('main.dictionary', filter=subject.id)}}">
+        <span class="desc-tag" id="hashtag0">{{subject}}</span>
+      </a>
+      {% endfor %}
+    </div>
+  </article>
+  <h2 class="similar-terms-title">მსგავსი ტერმინები</h2>
+    <div class="flex-wrap-main">
+      <div class="term-cards-wrapper"></div>
+    </div>
+
+  <div class="terms-button-wrapper">
+    {% if detailed_subject.course_link %}
+    <a href="{{ detailed_subject.course_link }}">კურსის ნახვა</a>
+    {% endif %}
+    {% if detailed_subject.internship_link %}
+    <a href="{{ detailed_subject.internship_link }}">სტაჟირების ნახვა</a>
+    {% endif %}
+  </div>
+
+</main>
+
+<script type="module" src="static/js/main.js"></script>
+<script type="module" src="static/js/detailed.js"></script>
 
 {% endblock %}

@@ -2,19 +2,26 @@ from src.extensions import db
 
 
 class Subject(db.Model):
-    __tablename__ = "subject"
+    __tablename__ = "subjects"
 
     id = db.Column(db.Integer, primary_key=True)
     name = db.Column(db.String)
     course_link = db.Column(db.String)
     internship_link = db.Column(db.String)
 
-    terms = db.relationship("Term", back_populates="subject")
+    terms = db.relationship("Term", secondary="subjects_terms", back_populates="subject")
 
 
     def __repr__(self):
         return f"{self.name}"
 
+
+class TermToSubject(db.Model):
+    __tablename__ = "subjects_terms"
+
+    id = db.Column(db.Integer, primary_key=True)
+    subjects_id= db.Column(db.Integer, db.ForeignKey("subjects.id"))
+    terms_id = db.Column(db.Integer, db.ForeignKey("terms.id"))
 
 class Term(db.Model):
     __tablename__ = "terms"
@@ -26,11 +33,12 @@ class Term(db.Model):
     geo_word = db.Column(db.String)
     img = db.Column(db.String)
 
-    subject_id = db.Column(db.ForeignKey("subject.id"))
-    subject = db.relationship("Subject", back_populates="terms")
+    subject = db.relationship("Subject", secondary="subjects_terms", back_populates="terms")
 
     parent_word_id = db.Column(db.Integer, db.ForeignKey("terms.id"))
     parent_word_rel = db.relationship("Term", remote_side="Term.id", backref="parent_word")
 
     def __repr__(self):
-        return f"{self.geo_word} {self.description}"
+        return f"{self.geo_word}"
+
+

@@ -20,3 +20,4 @@ class SubjectView(SecureModelView):
                         }
     page_size = 10
 
+

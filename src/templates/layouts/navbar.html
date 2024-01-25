@@ -1,22 +1,21 @@
 {% from "macros.html" import create_navlink %}
 <header class="header">
-    <div class = "container">
+    <div class="container">
         <nav class="nav">
-                    <div class="flex-between">
-                        <ul class="nav-ul">
-                             <li class="nav-li">
-                                <a class="nav-link active" href="{{url_for('main.index')}}"><img src="{{url_for('static', filename='/svg/site-logo/logo.svg')}}" alt="site logo"></a>
-                            <li class="nav-li">
-                                <a class="nav-link" href="{{url_for('main.about')}}">{{"პროექტის შესახებ"}}</a>
-                            </li>
-                            <li class="nav-li">
-                                <a class="nav-link" href="{{url_for('main.dictionary')}}">{{"ლექსიკონი"}}</a>
-                            </li>
-                        </ul>
-
-                    </div>
-        </nav>
-
+            <div class="flex-between">
+                <ul class="nav-ul">
+                    <li class="nav-li">
+                        <a class="nav-link active" href="{{url_for('main.index')}}">
+                            <img src="{{url_for('static', filename='/svg/site-logo/logo.svg')}}" alt="site logo">
+                        </a>
+                    <li class="nav-li">
+                        <a class="nav-link" href="{{url_for('main.about')}}">{{"პროექტის შესახებ"}}</a>
+                    </li>
+                    <li class="nav-li">
+                        <a class="nav-link" href="{{url_for('main.dictionary')}}">{{"ლექსიკონი"}}</a>
+                    </li>
+                </ul>
             </div>
         </nav>
+    </div>
 </header>
