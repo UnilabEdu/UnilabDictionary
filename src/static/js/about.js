@@ -10,14 +10,22 @@ const personLPosition = document.querySelectorAll(".person-position");
 renderMembers(members, teamWrapper);
 
 function renderMembers(array, wrapper) {
-  wrapper.innerHTML = "";
+  // wrapper.innerHTML = "";
   array.forEach((el) => {
-    wrapper.innerHTML += `
-                <div class="slick-slide-wrapper" style="background-image: url(${el.memberImagePath})"><div class="about-person"><span class="person-name">${el.memberName}</span><span class="person-lastname">${el.memberLastname}</span><span class="person-position">${el.memberPosition}</span></div></div>
-            `;
+    // !my comment
+    // wrapper.innerHTML += `
+    //             <div class="slick-slide-wrapper" style="background-image: url(${el.memberImagePath})">
+    //               <div class="about-person">
+    //                 <span class="person-name">${el.memberName}</span>
+    //                 <span class="person-lastname">${el.memberLastname}</span>
+    //                 <span class="person-position">${el.memberPosition}</span>
+    //               </div>
+    //             </div>
+    //         `;
   });
   // <img src=${el.memberImagePath} alt="team member">
 }
+// ? esec ese damxvda
 // $(".meet-team-wrapper").slick({
 //   // autoplay: true,
 //   infinite: true,
