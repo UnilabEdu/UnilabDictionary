@@ -26,88 +26,83 @@ if (document.body.offsetWidth < 769) {
 }
 
 console.log(document.location.pathname);
-
+//! my comment
 // import { renderData } from "./dictionary.js";
-function renderData(array) {
-  if (document.body.offsetWidth < 769) {
-    wordsCount = 6;
-  }
-  if (document.body.offsetWidth < 480) {
-    wordsCount = 5;
-  }
-  array.forEach((element) => {
-    cardsWrapper.innerHTML += "";
-    // console.log(element.Description)
-    const card = document.createElement("div");
-    card.setAttribute("class", "term-card");
-    cardsWrapper.append(card);
-    card.innerHTML = `
+// function renderData(array) {
+//   if (document.body.offsetWidth < 769) {
+//     wordsCount = 6;
+//   }
+//   if (document.body.offsetWidth < 480) {
+//     wordsCount = 5;
+//   }
+//   array.forEach((element) => {
+//     cardsWrapper.innerHTML += "";
+//     // console.log(element.Description)
+//     const card = document.createElement("div");
+//     card.setAttribute("class", "term-card");
+//     cardsWrapper.append(card);
+//     card.innerHTML = `
 
-        <div class="card-header">
-            <span class="term-icon">
-                <img src="${element.iconPath}" ../alt="third icon">
-            </span>
-            <h3 class="term-header-title"><span>${element.titleEng} -</span><span>${element.titleGeo}</span></h3>
-        </div>
+//         <div class="card-header">
+//             <span class="term-icon">
+//                 <img src="${element.iconPath}" ../alt="third icon">
+//             </span>
+//             <h3 class="term-header-title"><span>${
+//               element.titleEng
+//             } -</span><span>${element.titleGeo}</span></h3>
+//         </div>
 
-        <div class="card-body">
-            <p class="term-description">${element.Description.split(" ").splice(0, wordsCount).join(" ") + "..."}</p>
-        </div>
+//         <div class="card-body">
+//             <p class="term-description">${
+//               element.Description.split(" ").splice(0, wordsCount).join(" ") +
+//               "..."
+//             }</p>
+//         </div>
 
-        <div class="card-footer">
-            <div class="hashtag-keywords">
-            <a href="dictionary.html"><span>#${element.hashTags[1]}</span></a>
-            <a href="dictionary.html"><span>#${element.hashTags[0]}</span></a>
-        </div>
+//         <div class="card-footer">
+//             <div class="hashtag-keywords">
+//             <a href="dictionary.html"><span>#${element.hashTags[1]}</span></a>
+//             <a href="dictionary.html"><span>#${element.hashTags[0]}</span></a>
+//         </div>
 
-        <div class="button-wrapper">
-            <a href="#" class="see-details">ნახე სრულად</a>
-        </div>
-    `;
-  });
-}
+//         <div class="button-wrapper">
+//             <a href="#" class="see-details">ნახე სრულად</a>
+//         </div>
+//     `;
+//   });
+// }
 
-
-
-
-const search = document.querySelector('#main-search')
-search.addEventListener('input', (e) => {
-    const filteredData = data.filter(item => item.titleEng.toLowerCase().includes(e.target.value.toLowerCase()) || item.titleGeo.includes(e.target.value))
+const search = document.querySelector("#main-search");
+search.addEventListener("input", (e) => {
+  const filteredData = data.filter(
+    (item) =>
+      item.titleEng.toLowerCase().includes(e.target.value.toLowerCase()) ||
+      item.titleGeo.includes(e.target.value)
+  );
   console.log(filteredData);
+  //? esec ese damxvda
+  // if(filteredData.length < 10 && filteredData.length !== 0) {
+  //     notFoundMessage.style.display = 'none'
+  //     searchCounter(filteredData)
+  //     paginationRender(filteredData)
+  //     if(filteredData.length === 1) {
+  //         cardsWrapper.style.justifyContent = 'flex-start'
+  //     }
+  //     paginationWrapper.style.display = 'block'
+  // }else if (filteredData.length == 0){
+  //     notFoundMessage.style.display = 'flex'
+  //     searchCounter(filteredData)
+  //     paginationWrapper.style.display = 'none'
+  // }
+  // if (e.target.value == '') {
+  //     paginationRender(filteredData)
+  //     notFoundMessage.style.display = 'none'
+  //     paginationWrapper.style.display = 'block'
+  //     messageWrapper.style.display = 'none'
+  // }else if (e.target.value !== '' && filteredData.length >= 10){
+  //     searchCounter(filteredData)
+  //     paginationRender(filteredData)
+  //     notFoundMessage.style.display = 'none'
 
-
-
-
-
-
-
-
-
-
-
-
-    // if(filteredData.length < 10 && filteredData.length !== 0) {
-    //     notFoundMessage.style.display = 'none'
-    //     searchCounter(filteredData)
-    //     paginationRender(filteredData)
-    //     if(filteredData.length === 1) {
-    //         cardsWrapper.style.justifyContent = 'flex-start'
-    //     }
-    //     paginationWrapper.style.display = 'block'
-    // }else if (filteredData.length == 0){
-    //     notFoundMessage.style.display = 'flex'
-    //     searchCounter(filteredData)
-    //     paginationWrapper.style.display = 'none'
-    // }
-    // if (e.target.value == '') {
-    //     paginationRender(filteredData)
-    //     notFoundMessage.style.display = 'none'
-    //     paginationWrapper.style.display = 'block'
-    //     messageWrapper.style.display = 'none'
-    // }else if (e.target.value !== '' && filteredData.length >= 10){
-    //     searchCounter(filteredData)
-    //     paginationRender(filteredData)
-    //     notFoundMessage.style.display = 'none'
-
-    // }
+  // }
 });
