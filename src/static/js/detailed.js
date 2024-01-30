@@ -27,27 +27,42 @@ function renderData(array) {
     const card = document.createElement("div");
     card.setAttribute("class", "term-card");
     cardsWrapper.append(card);
-    card.innerHTML = `
-        <div class="card-header">
-            <span class="term-icon">
-                <img src="${element.iconPath}" ../alt="third icon">
-            </span>
-            <h3 class="term-header-title"><span>${element.titleEng} -</span><span>${element.titleGeo}</span></h3>
-        </div>
 
-        <div class="card-body">
-            <p class="term-description">${element.Description.split(" ").splice(0, wordsCount).join(" ") + "..."}</p>
-        </div>
+    //! my comment!
 
-        <div class="card-footer">
-            <div class="hashtag-keywords">
-            <a href="dictionary.html"><span>#${element.hashTags[1]}</span></a>
-            <a href="dictionary.html"><span>#${element.hashTags[0]}</span></a>
-        </div>
+    // card.innerHTML = `
+    //     <div class="card-header">
+    //         <span class="term-icon">
+    //             <img src="${element.iconPath}" ../alt="third icon">
+    //         </span>
+    //         <h3 class="term-header-title"><span>${
+    //           element.titleEng
+    //         } -</span><span>${element.titleGeo}</span></h3>
+    //     </div>
 
-        <div class="button-wrapper">
-            <a href="#" class="see-details">ნახე სრულად</a>
-        </div>
-    `;
+    //     <div class="card-body">
+    //         <p class="term-description">${
+    //           element.Description.split(" ").splice(0, wordsCount).join(" ") +
+    //           "..."
+    //         }</p>
+    //     </div>
+
+    //     <div class="card-footer">
+    //         <div class="hashtag-keywords">
+    //         <a href="dictionary.html"><span>#${element.hashTags[1]}</span></a>
+    //         <a href="dictionary.html"><span>#${element.hashTags[0]}</span></a>
+    //     </div>
+
+    //     <div class="button-wrapper">
+    //         <a href="#" class="see-details">ნახე სრულად</a>
+    //     </div>
+    // `;
   });
+}
+
+let imgWrapper = document.querySelector(".example-flexbox");
+let innerImage = document.querySelector(".example-img-wrapper");
+let paragraph = document.querySelector(".paragraph-wrapper");
+if (!imgWrapper.contains(innerImage)) {
+  paragraph.classList.add("active");
 }
