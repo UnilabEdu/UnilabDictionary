@@ -21,25 +21,27 @@
     <link href="{{ url_for('static', filename='css/utilities.css') }}" rel="stylesheet"/>
     <link href="{{url_for('static', filename='favicon.ico')}}" rel="shortcut icon">
 
+
 </head>
 
 
 <body>
 {% include "layouts/navbar.html" %}
 
-    <div class="container">
-        {% block body %}
-        {% endblock %}
-    </div>
+<div class="container">
+    {% block body %}
+    {% endblock %}
+</div>
     <footer class="footer">
         <div class="container">
             <div class="center-element">
-                <div class="email-info">
                 <p class="footer-info">ვებგვერდი შეიქმნა ლექსიკოგრაფების დახმარებით</p>
+                <div class="email-info">
+                    <span>unilab@iliauni.edu.ge</span>
                 </div>
-                <span>unilab@iliauni.edu.ge</span>
             </div>
         </div>
     </footer>
 </body>
+
 </html>
