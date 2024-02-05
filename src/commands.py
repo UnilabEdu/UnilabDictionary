@@ -19,13 +19,12 @@ def init_db():
 @with_appcontext
 def populate_db():
 
-
     roles = ["admin", "moderator", "member"]
     for role in roles:
         new_role = Role(name=role)
         new_role.create()
 
-    admin_user = User(username="admin@gmail.com", password="dictionary", role_id=1)
+    admin_user = User(username="admin", password="es_paroli_shecvalet123", role_id=1)
     admin_user.create()
 
     click.echo("Creating")
