@@ -1,0 +1,54 @@
+{% extends "layouts/base.html" %}
+{% from "macros.html" import create_term_card %}
+
+{% block body %}
+
+    <main class="container">
+
+        <article class="term-detailed">
+            <h2 id="term">
+                {{ term.eng_word }} - {{ term.geo_word }}
+            </h2>
+            <p id="termDesc">
+                {{ term.description | safe }}
+            </p>
+            <hr class="content-differ"/>
+            <div class="example-flexbox">
+                <div class="paragraph-wrapper">
+                    <h4 class="example">
+                        მაგალითი
+                    </h4>
+                    <p id="termExample">
+                        {{ term.example|safe }}
+                    </p>
+                </div>
+                <div class="example-img-wrapper">
+                    <img class="example-img" src="{{ term.get_image() }}"/>
+                </div>
+            </div>
+            <div class="hashtag-wrapper">
+                {% for subject in term.subject %}
+                    <a href="{{ url_for('main.dictionary', filter=subject.id) }}">
+                        <span class="{{ url_for('main.dictionary', filter=subject.id) }}">{{ subject }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+        </article>
+
+        <h2 class="similar-terms-title">მსგავსი ტერმინები</h2>
+        <div class="flex-wrap-main">
+            <div class="term-cards-wrapper">
+            </div>
+
+            <div class="terms-button-wrapper">
+                {% set subject = term.subject[0] %}
+                {% if subject.course_link %}
+                    <a href="{{ subject.course_link }}" target="_blank">კურსის ნახვა</a>
+                {% endif %}
+                {% if subject.internship_link %}
+                    <a href="{{ subject.internship_link }}" target="_blank">სტაჟირების ნახვა</a>
+                {% endif %}
+            </div>
+        </div>
+    </main>
+{% endblock %}

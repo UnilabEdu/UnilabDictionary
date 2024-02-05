@@ -360,52 +360,13 @@ function swiperInit(arr) {
   });
 }
 
-//? ese iyo ro daviwye mushaoba
-
-// export function renderData(array) {
-//     if (document.body.offsetWidth < 769) {
-//         wordsCount = 6
-
-//     }
-//     if (document.body.offsetWidth < 480) {
-//         wordsCount = 5
-//     }
-//     array.forEach((element) => {
-//         cardsWrapper.innerHTML += ''
-//         // console.log(element.Description)
-//         const card = document.createElement('div')
-//         card.setAttribute('class', 'term-card')
-//         cardsWrapper.append(card)
-//         card.innerHTML = `
-//                       <div class="card-header">
-//                           <span class="term-icon">
-//                               <img src="${element.iconPath}" ../alt="third icon">
-//                           </span>
-//                           <h3 class="term-header-title"><span>${element.titleEng} -&nbsp;</span><span>${element.titleGeo}</span></h3>
-//                       </div>
-//                       <div class="card-body">
-//                           <p class="term-description">${element.Description.split(' ').splice(0, wordsCount).join(' ') + "..."}</p>
-//                       </div>
-//                       <div class="card-footer">
-//                           <div class="hashtag-keywords">
-//                             <a href="dictionary.html"><span>#${element.hashTags[1]}</span></a>
-//                             <a href="dictionary.html"><span>#${element.hashTags[0]}</span></a>
-//                           </div>
-//                           <div class="button-wrapper">
-//                               <a href="#" class="see-details">ნახე სრულად</a>
-//                           </div>
-//                       </div>
-//         `
-//     })
-// }
-
 function urlUpdate(item) {
   item.addEventListener("input", function (e) {
     const selectedValue = e.target.value;
     const itemID = this.getAttribute("id");
     usp.set(itemID, selectedValue);
     const newUrl = window.location.pathname + "?" + usp.toString();
-    window.history.pushState({}, "", newUrl);
+    window.location.href = encodeURI(newUrl)
   });
 }
 

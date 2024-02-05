@@ -1,8 +1,47 @@
 {% macro create_navlink(endpoint, text) %}
-{% if endpoint == request.endpoint %}
-<a class="nav-link active" href="{{ url_for(endpoint) }}"> {{ text }}</a>
-{% else %}
-<a class="nav-link" href="{{ url_for(endpoint) }}"> {{ text }}</a>
-{% endif %}
+    {% if endpoint == request.endpoint %}
+        <a class="nav-link active" href="{{ url_for(endpoint) }}"> {{ text }}</a>
+    {% else %}
+        <a class="nav-link" href="{{ url_for(endpoint) }}"> {{ text }}</a>
+    {% endif %}
 {% endmacro %}
+
+{% macro create_term_card(term) %}
+    <div class="term-card">
+
+        <div class="card-header">
+            <span class="term-icon">
+                <img src="{{ url_for('static', filename='/svg/term-cards/term-icon-1.svg') }}">
+            </span>
+            <h3 class="term-header-title">
+                <span>{{ term.eng_word }} - {{ term.geo_word }}</span>
+            </h3>
+        </div>
+
+        <div class="card-body">
+            <p class="term-description">
+                {% if term.description | length > 100 %}
+                    {{ term.description[0:100]|safe }}...
+                {% else %}
+                    {{ term.description }}
+                {% endif %}
+            </p>
+        </div>
+
+        <div class="card-footer">
+            <div class="hashtag-keywords">
+                {% for subject in term.subjects %}
+                    <a href="{{ url_for('main.dictionary', filter=subject.id) }}">
+                        <span>{{ subject }}</span>
+                    </a>
+                {% endfor %}
+            </div>
+            <div class="button-wrapper">
+                <a href="{{ url_for('main.term_definition', id=term.id) }}" class="see-details">ნახე სრულად</a>
+            </div>
+        </div>
+
+    </div>
+{% endmacro %}
+
 

@@ -1,7 +1,7 @@
 from src.extensions import db
 
 
-class BaseModel():
+class BaseModel:
 
     def create(self, commit=True):
         db.session.add(self)
@@ -17,6 +17,3 @@ class BaseModel():
     def delete(self):
         db.session.delete(self)
         self.save()
-
-
-

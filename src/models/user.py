@@ -4,8 +4,8 @@ from werkzeug.security import generate_password_hash, check_password_hash
 from src.extensions import db
 from src.models.base import BaseModel
 
-class User(db.Model, BaseModel, UserMixin):
 
+class User(db.Model, BaseModel, UserMixin):
     __tablename__ = "users"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -26,8 +26,8 @@ class User(db.Model, BaseModel, UserMixin):
     def check_password(self, password):
         return check_password_hash(self.password, password)
 
-class Role(db.Model, BaseModel):
 
+class Role(db.Model, BaseModel):
     __tablename__ = "roles"
 
     id = db.Column(db.Integer, primary_key=True)
@@ -35,5 +35,3 @@ class Role(db.Model, BaseModel):
 
     def __repr__(self):
         return f"{self.name}"
-
-
